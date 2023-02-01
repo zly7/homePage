@@ -13,7 +13,7 @@ import { froneEndIPReal } from '@/utils/requests.js';
 const fontSize = 15;
 
 const jumpBlog = () => {
-    window.open('http://' + froneEndIPReal + ':8090', "_blank")
+    window.open('http://' + froneEndIPReal + ':7999', "_blank")
 }
 const jumpGithub = () => {
     window.open('https://github.com/zly7', "_blank")

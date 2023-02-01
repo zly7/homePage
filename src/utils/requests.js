@@ -1,5 +1,5 @@
 import axios from "axios";
-export const froneEndIPReal = '192.168.1.104';
+export const froneEndIPReal = '43.139.80.184';
 // export function biyingRequest(froneEndIP) { //js从ES6之后的标准
 //     const url = '';
 //     axios({

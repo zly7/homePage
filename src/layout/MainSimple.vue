@@ -11,9 +11,8 @@ import {
 import { ref } from "vue";
 import { froneEndIPReal } from '@/utils/requests.js';
 const fontSize = 15;
-
 const jumpBlog = () => {
-    window.open('http://' + froneEndIPReal + ':7999', "_blank")
+    window.open('http://' + froneEndIPReal, "_blank")
 }
 const jumpGithub = () => {
     window.open('https://github.com/zly7', "_blank")
@@ -25,9 +24,13 @@ const jumpZhihu = () => {
 const jumpResearchResume = () => {
     window.open('src/assets/resume/ResearchCVzly.pdf', '_blank')
 }
+
+const jumpWorkResume = () => {
+    window.open('src/assets/resume/old-version-work.pdf', '_blank')
+}
 const motto = ref('')
 const mottoFrom = ref('')
-axios.get('https://v1.hitokoto.cn').then(function (response) {
+axios.get('https://v1.hitokoto.cn?c=i&c=d').then(function (response) {
     motto.value = response.data.hitokoto;
     mottoFrom.value = response.data.from;
 }).catch(function (error) {
@@ -76,6 +79,10 @@ axios.get('https://v1.hitokoto.cn').then(function (response) {
                 <el-button round @click="jumpResearchResume">
                     <file-pdf-outlined />Research Resume</el-button>
             </div>
+            <div class="column">
+                <el-button round @click="jumpWorkResume">
+                    <file-pdf-outlined />Work Resume</el-button>
+            </div>
         </div>
     </section>
 
@@ -100,6 +107,7 @@ $message-body-pre-code-background-color: transparent;
     background-color: rgba(252, 252, 252, 0.1);
     text-align: 'center';
 }
+
 #mainPage {
     margin-top: 100px;
 }
@@ -107,7 +115,7 @@ $message-body-pre-code-background-color: transparent;
 #mainPage>div {
     margin: 0 auto;
     text-align: 'center';
-    width: 40%;
+    width: 50%;
 }
 
 #mottoCSS {
